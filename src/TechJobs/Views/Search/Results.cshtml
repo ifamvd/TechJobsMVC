@@ -24,7 +24,8 @@
                            name="searchType"
                            id="@column.Key"
                            value="@column.Key"
-                           @((column.Key == ViewBag.check) ? "checked" : "") />
+                           @((column.Key == ViewBag.check) ? "checked" : "")
+                           />
                     <label for="@column.Key">@column.Value</label>
                 </span>
             }

@@ -1,0 +1,21 @@
+﻿@foreach (Dictionary<string, string> job in ViewBag.jobs)
+{
+    <table class="job-listing">
+        @foreach (KeyValuePair<string, string> field in job)
+        {
+            <tr>
+                <td>@(char.ToUpper(field.Key[0]) + field.Key.Substring(1))</td>
+                <td>
+                    @if (field.Key == "name")
+                    {
+                        @field.Value
+                    }
+                    else
+                    {
+                        <a asp-controller="List" asp-action="Values" asp-route-column="@field.Key">@field.Value</a>
+                    }
+                </td>
+            </tr>
+        }
+    </table>
+}
